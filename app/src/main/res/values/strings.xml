@@ -1,4 +1,48 @@
 <resources>
     <string name="app_name">GalugCuisine</string>
     <string name="api_key">65c6c64bad0944a68287c0a6fe2e130b</string>
+    <string-array name="tags">
+        <item>
+            main course
+        </item>
+        <item>
+            side dish
+        </item>
+        <item>
+            dessert
+        </item>
+        <item>
+            appetizer
+        </item>
+        <item>
+            salad
+        </item>
+        <item>
+            bread
+        </item>
+        <item>
+            breakfast
+        </item>
+        <item>
+            soup
+        </item>
+        <item>
+            beverage
+        </item>
+        <item>
+            sauce
+        </item>
+        <item>
+            marinade
+        </item>
+        <item>
+            fingerfood
+        </item>
+        <item>
+            snack
+        </item>
+        <item>
+            drink
+        </item>
+    </string-array>
 </resources>
