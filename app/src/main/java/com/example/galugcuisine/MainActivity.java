@@ -1,6 +1,7 @@
 package com.example.galugcuisine;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +17,9 @@ import com.example.galugcuisine.Adapters.RandomRecipeAdapter;
 import com.example.galugcuisine.Listeners.RandomRecipeResponseListener;
 import com.example.galugcuisine.Models.RandomRecipeApiResponse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     ProgressDialog dialog;
@@ -23,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     RandomRecipeAdapter randomRecipeAdapter;
     RecyclerView recyclerView;
     Spinner spinner;
+    List<String> tags = new ArrayList<>();
+    SearchView searchView;
 
 
     @Override
@@ -32,6 +38,24 @@ public class MainActivity extends AppCompatActivity {
 
         dialog = new ProgressDialog(this);
         dialog.setTitle("Loading...");
+
+        searchView = findViewById(R.id.searchView_home);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                tags.clear();
+                tags.add(query);
+                manager.getRandomRecipe(randomRecipeResponseListener, tags);
+                dialog.show();
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
         spinner = findViewById(R.id.spinner_tags);
         ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(
                 this,
@@ -40,9 +64,11 @@ public class MainActivity extends AppCompatActivity {
         );
         arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
         spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(spinnerSelectedListener);
+
         manager = new RequestManager(this);
-        manager.getRandomRecipe(randomRecipeResponseListener);
-        dialog.show();
+//        manager.getRandomRecipe(randomRecipeResponseListener);
+//        dialog.show();
 
     }
 
@@ -65,7 +91,10 @@ public class MainActivity extends AppCompatActivity {
     private final AdapterView.OnItemSelectedListener spinnerSelectedListener = new AdapterView.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+            tags.clear();
+            tags.add(adapterView.getSelectedItem().toString());
+            manager.getRandomRecipe(randomRecipeResponseListener, tags);
+            dialog.show();
         }
 
         @Override
