@@ -3,6 +3,9 @@ package com.example.galugcuisine.Models;
 import java.util.ArrayList;
 
 public class RecipeDetailsResponse {
+
+    // Classe des détails d'une recette
+
     public int id;
     public String title;
     public String image;

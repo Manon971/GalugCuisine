@@ -19,6 +19,9 @@ import java.util.List;
 
 public class InstructionsEquipmentsAdapter extends RecyclerView.Adapter<InstructionEquipmentsViewHolder> {
 
+    // Adapteur des données des équipments nécessaires pour une étape d'une recette
+
+
     Context context;
     List<Equipment> list;
 

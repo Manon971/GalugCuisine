@@ -20,6 +20,9 @@ import java.util.List;
 
 public class SimilarRecipeAdapter extends RecyclerView.Adapter<SimilarRecipeViewHolder>{
 
+    // Adapteur des données des recettes générées par l'appel de recettes similaires
+
+
     Context context;
     List<SimilarRecipeResponse> list;
     RecipeClickListener listener;

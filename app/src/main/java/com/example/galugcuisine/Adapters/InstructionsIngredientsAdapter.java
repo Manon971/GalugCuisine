@@ -18,6 +18,9 @@ import java.util.List;
 
 public class InstructionsIngredientsAdapter extends RecyclerView.Adapter<InstructionIngredientsViewHolder> {
 
+    // Adapteur des données des ingrédients pour une étape d'une recette
+
+
     Context context;
     List<Ingredient> list;
 

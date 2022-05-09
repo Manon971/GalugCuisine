@@ -1,6 +1,9 @@
 package com.example.galugcuisine.Models;
 
 public class ProductMatch {
+
+    // Classe d'équivalent produit
+
     public int id;
     public String title;
     public String description;

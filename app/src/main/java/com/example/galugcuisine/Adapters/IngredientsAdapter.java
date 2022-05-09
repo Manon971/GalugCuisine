@@ -18,6 +18,8 @@ import java.util.List;
 
 public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsViewHolder>{
 
+    // Adapteur des données des ingrédients
+
     Context context;
     List<ExtendedIngredient> list;
 

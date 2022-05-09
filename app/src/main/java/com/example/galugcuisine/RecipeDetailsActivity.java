@@ -26,6 +26,9 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
+
+    // Classe de la page détaillé d'une recette
+
     int id;
     TextView textView_meal_name, textView_meal_source, textView_meal_summary;
     ImageView imageView_meal_image;

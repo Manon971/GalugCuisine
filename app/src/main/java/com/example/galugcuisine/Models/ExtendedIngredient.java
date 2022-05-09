@@ -3,6 +3,9 @@ package com.example.galugcuisine.Models;
 import java.util.ArrayList;
 
 public class ExtendedIngredient {
+
+    // Classe d'un ingrédient étendu
+
     public int id;
     public String aisle;
     public String image;

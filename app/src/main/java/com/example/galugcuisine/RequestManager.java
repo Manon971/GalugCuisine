@@ -23,6 +23,9 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public class RequestManager {
+
+    // Classe gérant les requête vers l'API
+
     Context context;
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://api.spoonacular.com/")

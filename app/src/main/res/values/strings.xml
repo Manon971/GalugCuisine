@@ -1,6 +1,9 @@
 <resources>
+    <!-- nom de l'appli -->
     <string name="app_name">GalugCuisine</string>
+    <!-- key de l'api -->
     <string name="api_key">65c6c64bad0944a68287c0a6fe2e130b</string>
+    <!-- liste des items pour le menu -->
     <string-array name="tags">
         <item>
             main course

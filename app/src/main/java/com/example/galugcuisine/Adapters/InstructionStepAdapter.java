@@ -18,6 +18,9 @@ import java.util.List;
 
 public class InstructionStepAdapter extends RecyclerView.Adapter<InstructionStepViewHolder> {
 
+    // Adapteur des données d'une étape d'une recette
+
+
     Context context;
     List<Step> list;
 

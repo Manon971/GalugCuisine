@@ -17,6 +17,9 @@ import java.util.List;
 
 public class InstructionsAdapter extends RecyclerView.Adapter<InstructionsViewHolder> {
 
+    // Adapteur des données des instructions
+
+
     Context context;
     List<InstructionsResponse> list;
 

@@ -20,6 +20,9 @@ import java.util.List;
 
 public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHolder> {
 
+    // Adapteur des données des recettes générées par l'appel de recettes aléatoires
+
+
     Context context;
     List<Recipe> list;
     RecipeClickListener listener;

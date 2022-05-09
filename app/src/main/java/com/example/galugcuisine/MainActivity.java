@@ -24,6 +24,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Classe de l'activité par défaut
+
     ProgressDialog dialog;
     RequestManager manager;
     RandomRecipeAdapter randomRecipeAdapter;

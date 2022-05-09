@@ -3,6 +3,9 @@ package com.example.galugcuisine.Models;
 import java.util.ArrayList;
 
 public class Recipe {
+
+    // Classe d'une recette
+
     public Boolean vegetarian;
     public Boolean vegan;
     public Boolean glutenFree;
