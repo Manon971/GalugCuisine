@@ -30,43 +30,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"/>
 
-            <Spinner
-                android:id="@+id/spinner_tags"
+            <Button
+                android:id="@+id/button_main"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
-                android:entries="@array/tags"
-                android:gravity="center" />
+                android:text="Back to main page"
+                android:gravity="center"
+                android:backgroundTint="#8BC34A"/>
 
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.cardview.widget.CardView
-        app:cardElevation="8dp"
-        app:cardBackgroundColor="@color/white"
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView_home"
-            app:queryHint="Search for a recipe"
-            app:iconifiedByDefault="false"
-            app:searchIcon="@drawable/ic_search"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/button_favorites"
-        android:layout_height="wrap_content"
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_margin="20dp"
+        android:scrollbars="none"
         android:layout_width="match_parent"
-        android:text="Favorites"
-        android:backgroundTint="#8BC34A"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_random"
-        android:layout_margin="4dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

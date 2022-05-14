@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +42,8 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     IngredientsAdapter ingredientsAdapter;
     SimilarRecipeAdapter similarRecipeAdapter;
     InstructionsAdapter instructionsAdapter;
+    Database myDB;
+    View.OnClickListener notFavorite, isFavorite;
 
 
     @Override
@@ -56,7 +62,56 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         dialog = new ProgressDialog(this);
         dialog.setTitle("Loading details...");
         dialog.show();
+        myDB = new Database(this);
+
+        final Button button = findViewById(R.id.button_addfavorite);
+        if (myDB.checkFavorite(String.valueOf(id))) {
+            button.setText("Remove from favorites");
+        }
+        notFavorite = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Code here executes on main thread after user presses button
+                String idStr = String.valueOf(id);
+                String titleStr = textView_meal_name.getText().toString();
+                if (myDB.insertRecipe(idStr, titleStr)) {
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(RecipeDetailsActivity.this)
+                            .setTitle("Success")
+                            .setMessage("Recipe added to favorites")
+                            .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                }
+                            });
+                    dialog.show();
+                }
+            }
+        };
+        isFavorite = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Code here executes on main thread after user presses button
+                String idStr = String.valueOf(id);
+                if (myDB.removeRecipe(idStr)) {
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(RecipeDetailsActivity.this)
+                            .setTitle("Success")
+                            .setMessage("Recipe removed from favorites")
+                            .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                }
+                            });
+                    dialog.show();
+                }
+            }
+        };
+        button.setOnClickListener(myDB.checkFavorite(String.valueOf(id))? isFavorite : notFavorite);
     }
+
+
+
 
     private void findViews() {
         textView_meal_name = findViewById(R.id.textView_meal_name);

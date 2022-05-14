@@ -105,6 +105,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+            <Button
+                android:id="@+id/button_addfavorite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Add to favorites"
+                android:gravity="center"
+                android:backgroundTint="#8BC34A"/>
+
+
         </LinearLayout>
+
     </ScrollView>
 </LinearLayout>

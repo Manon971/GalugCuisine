@@ -5,12 +5,14 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -74,6 +76,14 @@ public class MainActivity extends AppCompatActivity {
 //        manager.getRandomRecipe(randomRecipeResponseListener);
 //        dialog.show();
 
+        final Button button = findViewById(R.id.button_favorites);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                startActivity(new Intent(MainActivity.this, FavoritesActivity.class));
+            }
+        });
+
     }
 
     private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
@@ -114,5 +124,4 @@ public class MainActivity extends AppCompatActivity {
             .putExtra("id", id));
         }
     };
-
 }

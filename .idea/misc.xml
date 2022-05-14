@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/giann/StudioProjects/GalugCuisine/app/src/main/res/layout/activity_favorites.xml" value="0.25" />
         <entry key="..\:/Users/giann/StudioProjects/GalugCuisine/app/src/main/res/layout/activity_main.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/giann/StudioProjects/GalugCuisine/app/src/main/res/layout/activity_recipe_details.xml" value="0.264" />
+        <entry key="..\:/Users/giann/StudioProjects/GalugCuisine/app/src/main/res/layout/favorite.xml" value="0.25" />
         <entry key="..\:/Users/giann/StudioProjects/GalugCuisine/app/src/main/res/layout/list_instructions.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/giann/StudioProjects/GalugCuisine/app/src/main/res/layout/list_instructions_step_items.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/giann/StudioProjects/GalugCuisine/app/src/main/res/layout/list_instructions_steps.xml" value="0.25416666666666665" />
